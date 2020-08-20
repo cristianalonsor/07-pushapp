@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>push app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>UserID</ion-label>
+    </ion-list-header>
+    
+    <ion-item>
+      <ion-label>{{pushService.userId}}</ion-label>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Mensajes por push</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let push of mensajes">
+      <ion-label>
+        <h3>{{push.title}}</h3>
+        <p>{{push.body}}</p>
+        <p>{{ push.additionalData | json }}</p> <!--son los parametros adicionales que se recibiran en la push-->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
