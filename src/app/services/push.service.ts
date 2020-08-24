@@ -90,4 +90,11 @@ export class PushService {
     return this.mensajes;
   }
 
+  async borrarMensajes(){
+    await this.storage.clear(); //tener cuiodado con lo que quiero eliminar, como lo borrare todo es clear
+                          // caso contrario debe ser el .remove('parametro a eliminar');
+    this.mensajes = [];                      
+    this.guardarMensajes();
+  }
+
 }
